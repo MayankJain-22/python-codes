@@ -1,0 +1,121 @@
+:root{
+    --bg-colour: radial-gradient(#52cbbf,#ffcbcb);
+    --white-colour: #FFFFFF;
+    --black-colour:#000E1A;
+    --blue-colour: #1b9286;
+    --medium-dark: #333333;
+    --light-pink: #fa9898;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--bg-colour);
+}
+.container{
+    max-width: 400px;
+    width: 100%;
+    border-radius: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:3px solid rgb(0, 0, 0);
+    color: var(--white-colour);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.display-container{
+    display: flex;
+    flex-direction: column;
+    margin-block: 40px 30px;
+}
+.history{
+    width: 100%;
+    height: 30px;
+    text-align: right;
+    color: var(--black-colour);
+    font-weight: 800;
+}
+.display{
+    font-size: 50px;
+    font-weight: 100;
+    height: 70px;
+    width: 100%;
+    text-align: right;
+    outline: none;
+    border: none;
+    pointer-events: none;
+    background: transparent;
+    color: var(--black-colour);
+}
+::placeholder{
+    color: var(--black-colour);
+}
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 15px;
+}
+.buttons button{
+    width: 75px;
+    height: 75px;
+    font-size: 24px;
+    font-weight: 300;
+    background-color: var(--medium-dark);
+    color: var(--white-colour);
+    border:none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.buttons .operator{
+    background-color: var(--blue-colour);
+}
+.operator.top-operator{
+    background-color: var(--light-pink);
+    color: var(--black-colour);
+    font-size: 28px;
+}
+.buttons button:active{
+    transform: scale(0.95);
+}
+.operator.equal-to{
+    width: calc(65% - 65px);
+    border-radius: 50px;
+    text-align: center;
+    padding-right: none;
+}
+
+/* ======RESPONSIVE======= */
+@media screen and (max-width: 376px) {
+    body{
+        background-color: var(--black-colour);
+    }
+    .display{
+        font-size: 40px;
+    }
+    .buttons{
+        row-gap: 10px;
+    }
+    .buttons button{
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+    }
+    .container{
+        max-width: 300px;   
+    }
+    .operator.equal-to{
+        width: calc(65% - 65px);
+        border-radius: 50px;
+        text-align: center;
+        padding-right: none;
+    }
+}
